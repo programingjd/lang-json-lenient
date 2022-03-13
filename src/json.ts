@@ -1,4 +1,4 @@
-import {parser} from "@lezer/json"
+import {parser} from "@lezer/json-lenient"
 import {continuedIndent, indentNodeProp, foldNodeProp, foldInside, LRLanguage, LanguageSupport} from "@codemirror/language"
 import {styleTags, tags as t} from "@codemirror/highlight"
 
@@ -11,7 +11,8 @@ export const jsonLanguage = LRLanguage.define({
         Array: continuedIndent({except: /^\s*\]/})
       }),
       foldNodeProp.add({
-        "Object Array": foldInside
+        "Object Array": foldInside,
+        BlockComment(tree) { return {from: tree.from + 2, to: tree.to - 2} }
       }),
       styleTags({
         String: t.string,
@@ -21,7 +22,9 @@ export const jsonLanguage = LRLanguage.define({
         Null: t.null,
         ",": t.separator,
         "[ ]": t.squareBracket,
-        "{ }": t.brace
+        "{ }": t.brace,
+        LineComment: t.lineComment,
+        BlockComment: t.blockComment
       })
     ]
   }),
@@ -35,5 +38,3 @@ export const jsonLanguage = LRLanguage.define({
 export function json() {
   return new LanguageSupport(jsonLanguage)
 }
-
-export {jsonParseLinter} from "./lint"
