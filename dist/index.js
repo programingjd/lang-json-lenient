@@ -8,7 +8,8 @@ const jsonLanguage = /*@__PURE__*/LRLanguage.define({
         props: [
             /*@__PURE__*/indentNodeProp.add({
                 Object: /*@__PURE__*/continuedIndent({ except: /^\s*\}/ }),
-                Array: /*@__PURE__*/continuedIndent({ except: /^\s*\]/ })
+                Array: /*@__PURE__*/continuedIndent({ except: /^\s*\]/ }),
+                "String BlockComment": () => -1
             }),
             /*@__PURE__*/foldNodeProp.add({
                 "Object Array": foldInside,

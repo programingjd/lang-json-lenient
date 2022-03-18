@@ -12,7 +12,8 @@ const jsonLanguage = language.LRLanguage.define({
         props: [
             language.indentNodeProp.add({
                 Object: language.continuedIndent({ except: /^\s*\}/ }),
-                Array: language.continuedIndent({ except: /^\s*\]/ })
+                Array: language.continuedIndent({ except: /^\s*\]/ }),
+                "String BlockComment": () => -1
             }),
             language.foldNodeProp.add({
                 "Object Array": language.foldInside,
