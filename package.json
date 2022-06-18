@@ -22,15 +22,11 @@
   "sideEffects": false,
   "license": "MIT",
   "dependencies": {
-    "@codemirror/highlight": "^0.19.7",
-    "@codemirror/language": "^0.19.8",
-    "@codemirror/lint": "^0.19.6",
-    "@codemirror/view": "^0.19.47",
-    "@codemirror/text": "^0.19.6",
+    "@codemirror/language": "^0.20.2",
     "@lezer/json-lenient": "../lezer-json"
   },
   "devDependencies": {
-    "@codemirror/buildhelper": "^0.1.14"
+    "@codemirror/buildhelper": "^0.1.15"
   },
   "repository": {
     "type": "git",
