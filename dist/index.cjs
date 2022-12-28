@@ -7,6 +7,7 @@ var language = require('@codemirror/language');
 
 /// A language provider that provides JSON parsing.
 const jsonLanguage = language.LRLanguage.define({
+    name: 'json-lenient',
     parser: jsonLenient.parser.configure({
         props: [
             language.indentNodeProp.add({
