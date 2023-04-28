@@ -1,6 +1,6 @@
 {
   "name": "@codemirror/lang-json",
-  "version": "6.3.2",
+  "version": "6.6.0",
   "description": "Lenient JSON language support for the CodeMirror code editor",
   "scripts": {
     "test": "cm-runtests",
@@ -22,7 +22,7 @@
   "sideEffects": false,
   "license": "MIT",
   "dependencies": {
-    "@codemirror/language": "^6.3.2",
+    "@codemirror/language": "^6.6.0",
     "@lezer/json-lenient": "../lezer-json"
   },
   "devDependencies": {

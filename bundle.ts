@@ -1,5 +1,6 @@
 import {build, stop} from 'https://deno.land/x/esbuild/mod.js';
 
+// noinspection JSUnusedGlobalSymbols
 let httpPlugin={
   name: 'http',
   setup(build) {
