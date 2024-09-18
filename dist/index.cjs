@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var jsonLenient = require('@lezer/json-lenient');
 var language = require('@codemirror/language');
 
